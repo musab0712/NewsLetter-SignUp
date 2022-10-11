@@ -35,6 +35,7 @@ app.post("/", function(req, res){
         auth : "Musab:a8eb872ff5a4c46cbe8ce8c994b582e1-us8"
     };
     const request = https.request(url, options, function(response){
+        console.log(response.statusCode);
         if(response.statusCode === 200){
             res.sendFile(__dirname + "/public/html/success.html");
         }
